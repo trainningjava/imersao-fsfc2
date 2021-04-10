@@ -1,3 +1,6 @@
 simulator/.idea
 simulator/.vscode
 simulator/.env
+.idea
+*.cmd
+*.bat

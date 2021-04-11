@@ -3,9 +3,9 @@
 ### Start api
 
 ```sh
-kubectl apply -f backend-api/deploy.yaml
-kubectl expose -f backend-api/deploy.yaml
-kubectl port-forward service/backend-api 3000
+kubectl apply -f backend/deploy.yaml
+kubectl expose -f backend/deploy.yaml
+kubectl port-forward service/backend 3000
 ```
 
 ### Start frontend

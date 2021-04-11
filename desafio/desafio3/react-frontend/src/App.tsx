@@ -13,22 +13,15 @@ interface Endereco {
 }
 
 function App() {
-  const [ends, setends] = useState<Endereco[]>([]);
+  const [ends, setEnds] = useState<Endereco[]>([]);
 
   useEffect(() => {
-      axios('http://localhost:3000/routes', {
-        headers:{
-          'Access-Control-Allow-Origin':  'http://localhost:3000',
-          'Access-Control-Allow-Headers':  'Content-Type, X-Auth-Token, Authorization, Origin',
-          'Access-Control-Allow-Methods':  'GET',
-        }
-      })
-      .then(res => {
-        setends(res.data)
-      }).catch(error => {
-        console.log("error", error);
-        
-      });
+    const handleApi = async () => {
+      const res = await axios('http://localhost:3000/routes');
+
+      if (res != null) setEnds(res.data);
+    };
+    handleApi();
   }, []);
 
   return (

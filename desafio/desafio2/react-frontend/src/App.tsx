@@ -18,7 +18,6 @@ function App() {
   useEffect(() => {
     const handleApi = async () => {
       const res = await axios('http://localhost:3000/routes');
-      console.log(res);
 
       if (res != null) setEnds(res.data);
     };
